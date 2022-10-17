@@ -30,7 +30,7 @@ def topology():
     e1 = net.addAccessPoint('Tower1', mac='00:00:00:11:00:01', channel='1',
                             position='2600,3500,0', **kwargs)
     e2 = net.addAccessPoint('Tower2', mac='00:00:00:11:00:02', channel='6',
-                            position='2800,3500,0', **kwargs)
+                            position='2800,3250,0', **kwargs)
 
     info("*** Configuring Propagation Model\n")
     net.setPropagationModel(model="logDistance", exp=2.8)
