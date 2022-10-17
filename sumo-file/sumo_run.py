@@ -22,7 +22,7 @@ def topology():
     net = Mininet_wifi(link=wmediumd, wmediumd_mode=interference)
 
     info("*** Creating nodes\n")
-    for id in range(0, 10):
+    for id in range(0, 5):
         net.addCar('car%s' % (id+1), wlans=2, encrypt=['wpa2', ''])
 
     kwargs = {'ssid': 'vanet-ssid', 'mode': 'g', 'passwd': '123456789a',
@@ -47,8 +47,8 @@ def topology():
     # client the given position in the execution order.
     # We may have to change it from 0 to 1 if we want to
     # load/reload the current simulation from a 2nd client
-    net.useExternalProgram(program=sumo, #port=8813,
-                           config_file='map.sumocfg', 				
+    net.useExternalProgram(program=sumo, port=8813,
+                           config_file='polban1.sumo', 				
                            extra_params=["--start --delay 300"],
                            clients=1, exec_order=0)
 
